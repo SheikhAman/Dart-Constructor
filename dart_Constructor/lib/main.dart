@@ -5,6 +5,10 @@
 // 4. Constant Constructor
 
 /* In one class we can have multiple named constructor but you can not have parameterised and default constructor at the same time. */
+/* Properties of Constructor 
+-> Used to create Objects
+-> You can initialize your instance or field variable within Constructors
+*/
 
 void main() {
   /* // here we used default constructor
