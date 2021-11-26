@@ -4,6 +4,8 @@
 // 3. Named Constructor
 // 4. Constant Constructor
 
+/* In one class we can have multiple named constructor but you can not have parameterised and default constructor at the same time. */
+
 void main() {
   /* // here we used default constructor
   var student1 =
@@ -25,6 +27,19 @@ void main() {
   print('${student3.id} and ${student3.name}');
   student3.study();
   student3.sleep();
+
+  var student4 = Student
+      .myCustomConstructor(); // one more object created where student3 is reference variable
+  student4.id = 67;
+  student4.name = 'Bd';
+  print('${student4.id} and ${student4.name}');
+  student4.study();
+  student4.sleep();
+
+  var student5 = Student.myAnotherNameConstructor(333, 'Peace');
+  print('${student5.id} and ${student5.name}');
+  student5.study();
+  student5.sleep();
 }
 
 class Student {
@@ -58,6 +73,15 @@ Student (int _id, String _name){
 Student (this.id, this.name); //parameterised constructor, akhane direct instance variablee refer kora hoyeche this.instance variable use kore
 
 */
+
+  Student.myCustomConstructor() {
+    /* Named Constructor*/
+    // your code
+    print('This is my Custom Constructor');
+  }
+
+  Student.myAnotherNameConstructor(this.id,
+      this.name); // it is another Named Constructor , in named constructor we can also pass parameter like parameterised constructor
 
   void study() {
     print('${this.id} is now studying');
